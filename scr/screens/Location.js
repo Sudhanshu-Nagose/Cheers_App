@@ -43,10 +43,10 @@ const Location = ({ navigation }) => {
     <View style={{ flex: 1 }}>
       <BottomSheetModalProvider>
         <Image
-          style={{ alignSelf: "center", width: "100%", height: hp(50) }}
+          style={{ alignSelf: "center", width: "100%", height: hp(48) }}
           source={require("../Images/5.png")}
         />
-        <View style={{ marginTop: -40, marginBottom: 80 }}>
+        <View style={{ marginTop: hp(-4) , marginBottom: hp(1) }}>
           <Text
             style={{
               textAlign: "center",
@@ -60,20 +60,20 @@ const Location = ({ navigation }) => {
             style={{
               textAlign: "center",
               fontSize: RFPercentage(2.5),
-              marginTop: 10,
+              marginTop: hp(1.5),
               color: "#070707",
               fontFamily:"Roboto-Regular"
             }}>
             We are currently serviceable in selected locations.
           </Text>
         </View>
-        <View>
+        <View style={{marginTop: hp(10)}}>
           <TouchableOpacity
             style={{
               backgroundColor: "#e30038",
-              padding: 12,
+              padding: wp(3.2),
               borderRadius: 3,
-              marginHorizontal: 28
+              marginHorizontal: hp(4)
             }}
             onPress={() => {
                 navigation.navigate('CurrentLocation');
@@ -86,10 +86,10 @@ const Location = ({ navigation }) => {
           <TouchableOpacity
             style={{
               backgroundColor: "#00b951",
-              padding: 12,
+              padding: wp(3.2),
               borderRadius: 3,
-              marginHorizontal: 28,
-              marginTop: 25
+              marginHorizontal: hp(4),
+              marginTop: hp(3)
             }}
             onPress={hundlePresentModal}>
             <Text style={{ textAlign: "center", color: "#fff", fontFamily:"Roboto-Regular" }}>
@@ -104,12 +104,12 @@ const Location = ({ navigation }) => {
             style={{}}>
             <View>
               <TouchableOpacity
-                style={{ paddingHorizontal: 335 }}
+                style={{ paddingHorizontal: wp(92) }}
                 onPress={() => {
                   bottomSheetModalRef.current?.dismiss();
                 }}>
                 <Image
-                  style={{ height: 20, width: 20 }}
+                  style={{ height: 25, width: 25 }}
                   source={require("../Images/cross.png")}
                 />
               </TouchableOpacity>
@@ -118,18 +118,18 @@ const Location = ({ navigation }) => {
                   alignSelf: "center",
                   width: "25%",
                   height: hp(10),
-                  marginTop: 10
+                  marginTop: hp(0.1)
                 }}
                 source={require("../Images/1.png")}
               />
               <TextInput
                 style={{
-                  height: 40,
+                  height: hp(5.5),
                   margin: 12,
-                  borderWidth: 1,
+                  borderWidth: wp(0.2),
                   padding: 10,
                   borderRadius: 5,
-                  marginTop: 25,
+                  marginTop: hp(5),
                   fontFamily:'Roboto-Regular'
                 }}
                 value={pin}
@@ -141,7 +141,7 @@ const Location = ({ navigation }) => {
               />
 
               <TouchableOpacity
-                style={{ marginTop: 10 }}
+                style={{ marginTop: hp(2) }}
                 onPress={() =>
                   navigation.navigate("Pincode", {pin})
                 }>
@@ -151,7 +151,7 @@ const Location = ({ navigation }) => {
                     padding: 12,
                     borderRadius: 5,
                     textAlign: "center",
-                    marginHorizontal: 12,
+                    marginHorizontal: hp(1.5),
                     color: "#fff",
                     fontFamily:'Roboto-Regular'
                   }}>
